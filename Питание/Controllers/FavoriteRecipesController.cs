@@ -1,66 +1,51 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Domain.Interfaces;
+using Domain.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FavoriteRecipesController : ControllerBase
+    public class FavoriteRecipeController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public FavoriteRecipesController(практическая_работаContext context)
+        private IFavoriteRecipeService _FavoriteRecipeService;
+        public FavoriteRecipeController(IFavoriteRecipeService FavoriteRecipeService)
         {
-            Context = context;
+            _FavoriteRecipeService = FavoriteRecipeService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<FavoriteRecipe> user = Context.FavoriteRecipes.ToList();
-            return Ok(user);
+            return Ok(await _FavoriteRecipeService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            FavoriteRecipe? user = Context.FavoriteRecipes.Where(x => x.FavoriteRecipeId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _FavoriteRecipeService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(FavoriteRecipe user)
+        public async Task<IActionResult> Add(FavoriteRecipe FavoriteRecipe)
         {
-            Context.FavoriteRecipes.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FavoriteRecipeService.Create(FavoriteRecipe);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(FavoriteRecipe user)
+        public async Task<IActionResult> Update(FavoriteRecipe FavoriteRecipe)
         {
-            Context.FavoriteRecipes.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FavoriteRecipeService.Update(FavoriteRecipe);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            FavoriteRecipe? user = Context.FavoriteRecipes.Where(x => x.FavoriteRecipeId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.FavoriteRecipes.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FavoriteRecipeService.Delete(id);
+            return Ok();
         }
     }
 }

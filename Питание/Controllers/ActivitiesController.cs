@@ -1,66 +1,52 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
-    public class ActivitiesController : ControllerBase
+    public class ActivityController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public ActivitiesController(практическая_работаContext context)
+        private IActivityService _activityService;
+        public ActivityController(IActivityService activityService)
         {
-            Context = context;
+            _activityService = activityService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Activity> user = Context.Activities.ToList();
-            return Ok(user);
+            return Ok(await _activityService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Activity? user = Context.Activities.Where(x => x.ActivityId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _activityService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(Activity user)
+        public async Task<IActionResult> Add(Activity activity)
         {
-            Context.Activities.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _activityService.Create(activity);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(Activity user)
+        public async Task<IActionResult> Update(Activity activity)
         {
-            Context.Activities.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _activityService.Update(activity);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Activity? user = Context.Activities.Where(x => x.ActivityId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.Activities.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _activityService.Delete(id);
+            return Ok();
         }
     }
 }

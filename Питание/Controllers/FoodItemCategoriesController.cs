@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FoodItemCategoriesController : ControllerBase
+    public class FoodItemCategoryController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public FoodItemCategoriesController(практическая_работаContext context)
+        private IFoodItemCategoryService _FoodItemCategoryService;
+        public FoodItemCategoryController(IFoodItemCategoryService FoodItemCategoryService)
         {
-            Context = context;
+            _FoodItemCategoryService = FoodItemCategoryService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<FoodItemCategory> user = Context.FoodItemCategories.ToList();
-            return Ok(user);
+            return Ok(await _FoodItemCategoryService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            FoodItemCategory? user = Context.FoodItemCategories.Where(x => x.FoodItemCategoryId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _FoodItemCategoryService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(FoodItemCategory user)
+        public async Task<IActionResult> Add(FoodItemCategory FoodItemCategory)
         {
-            Context.FoodCategories.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodItemCategoryService.Create(FoodItemCategory);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(FoodItemCategory user)
+        public async Task<IActionResult> Update(FoodItemCategory FoodItemCategory)
         {
-            Context.FoodItemCategories.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodItemCategoryService.Update(FoodItemCategory);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            FoodItemCategory? user = Context.FoodItemCategories.Where(x => x.FoodItemCategoryId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.FoodItemCategories.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodItemCategoryService.Delete(id);
+            return Ok();
         }
     }
 }

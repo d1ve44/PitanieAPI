@@ -1,66 +1,51 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Domain.Interfaces;
+using Microsoft.AspNetCore.Http;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserPreferencesController : ControllerBase
+    public class UserPreferenceController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public UserPreferencesController(практическая_работаContext context)
+        private IUserPreferenceService _UserPreferenceService;
+        public UserPreferenceController(IUserPreferenceService UserPreferenceService)
         {
-            Context = context;
+            _UserPreferenceService = UserPreferenceService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<UserPreference> user = Context.UserPreferences.ToList();
-            return Ok(user);
+            return Ok(await _UserPreferenceService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            UserPreference? user = Context.UserPreferences.Where(x => x.UserPreferenceId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _UserPreferenceService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(UserPreference user)
+        public async Task<IActionResult> Add(UserPreference UserPreference)
         {
-            Context.UserPreferences.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _UserPreferenceService.Create(UserPreference);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(UserPreference user)
+        public async Task<IActionResult> Update(UserPreference UserPreference)
         {
-            Context.UserPreferences.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _UserPreferenceService.Update(UserPreference);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            UserPreference? user = Context.UserPreferences.Where(x => x.UserPreferenceId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.UserPreferences.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _UserPreferenceService.Delete(id);
+            return Ok();
         }
     }
 }

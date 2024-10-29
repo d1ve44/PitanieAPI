@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ShoppingListsController : ControllerBase
+    public class ShoppingListController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public ShoppingListsController(практическая_работаContext context)
+        private IShoppingListService _ShoppingListService;
+        public ShoppingListController(IShoppingListService ShoppingListService)
         {
-            Context = context;
+            _ShoppingListService = ShoppingListService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<ShoppingList> user = Context.ShoppingLists.ToList();
-            return Ok(user);
+            return Ok(await _ShoppingListService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            ShoppingList? user = Context.ShoppingLists.Where(x => x.ShoppingListId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _ShoppingListService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(ShoppingList user)
+        public async Task<IActionResult> Add(ShoppingList ShoppingList)
         {
-            Context.ShoppingLists.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _ShoppingListService.Create(ShoppingList);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(ShoppingList user)
+        public async Task<IActionResult> Update(ShoppingList ShoppingList)
         {
-            Context.ShoppingLists.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _ShoppingListService.Update(ShoppingList);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            ShoppingList? user = Context.ShoppingLists.Where(x => x.ShoppingListId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.ShoppingLists.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _ShoppingListService.Delete(id);
+            return Ok();
         }
     }
 }

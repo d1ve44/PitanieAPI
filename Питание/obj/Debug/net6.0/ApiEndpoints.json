@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivitiesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivityController",
     "Method": "GetAll",
-    "RelativePath": "api/Activities",
+    "RelativePath": "api/Activity",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,41 +10,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivitiesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivityController",
     "Method": "Add",
-    "RelativePath": "api/Activities",
+    "RelativePath": "api/Activity",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Activity",
+        "Name": "activity",
+        "Type": "Domain.Models.Activity",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivitiesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivityController",
     "Method": "Update",
-    "RelativePath": "api/Activities",
+    "RelativePath": "api/Activity",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Activity",
+        "Name": "activity",
+        "Type": "Domain.Models.Activity",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivitiesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivityController",
     "Method": "Delete",
-    "RelativePath": "api/Activities",
+    "RelativePath": "api/Activity",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -58,9 +58,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivitiesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ActivityController",
     "Method": "GetById",
-    "RelativePath": "api/Activities/{id}",
+    "RelativePath": "api/Activity/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -74,9 +74,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoriesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.AllergenController",
     "Method": "GetAll",
-    "RelativePath": "api/FoodCategories",
+    "RelativePath": "api/Allergen",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -84,41 +84,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoriesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.AllergenController",
     "Method": "Add",
-    "RelativePath": "api/FoodCategories",
+    "RelativePath": "api/Allergen",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.FoodCategory",
+        "Name": "allergen",
+        "Type": "Domain.Models.Allergen",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoriesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.AllergenController",
     "Method": "Update",
-    "RelativePath": "api/FoodCategories",
+    "RelativePath": "api/Allergen",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.FoodCategory",
+        "Name": "allergen",
+        "Type": "Domain.Models.Allergen",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoriesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.AllergenController",
     "Method": "Delete",
-    "RelativePath": "api/FoodCategories",
+    "RelativePath": "api/Allergen",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -132,9 +132,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoriesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.AllergenController",
     "Method": "GetById",
-    "RelativePath": "api/FoodCategories/{id}",
+    "RelativePath": "api/Allergen/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -148,9 +148,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FavoriteRecipeController",
     "Method": "GetAll",
-    "RelativePath": "api/FoodItems",
+    "RelativePath": "api/FavoriteRecipe",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -158,41 +158,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FavoriteRecipeController",
     "Method": "Add",
-    "RelativePath": "api/FoodItems",
+    "RelativePath": "api/FavoriteRecipe",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.FoodItem",
+        "Name": "FavoriteRecipe",
+        "Type": "Domain.Models.FavoriteRecipe",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FavoriteRecipeController",
     "Method": "Update",
-    "RelativePath": "api/FoodItems",
+    "RelativePath": "api/FavoriteRecipe",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.FoodItem",
+        "Name": "FavoriteRecipe",
+        "Type": "Domain.Models.FavoriteRecipe",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FavoriteRecipeController",
     "Method": "Delete",
-    "RelativePath": "api/FoodItems",
+    "RelativePath": "api/FavoriteRecipe",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -206,9 +206,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FavoriteRecipeController",
     "Method": "GetById",
-    "RelativePath": "api/FoodItems/{id}",
+    "RelativePath": "api/FavoriteRecipe/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -222,9 +222,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodAllergenController",
     "Method": "GetAll",
-    "RelativePath": "api/MealFoodItems",
+    "RelativePath": "api/FoodAllergen",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -232,41 +232,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodAllergenController",
     "Method": "Add",
-    "RelativePath": "api/MealFoodItems",
+    "RelativePath": "api/FoodAllergen",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.MealFoodItem",
+        "Name": "FoodAllergen",
+        "Type": "Domain.Models.FoodAllergen",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodAllergenController",
     "Method": "Update",
-    "RelativePath": "api/MealFoodItems",
+    "RelativePath": "api/FoodAllergen",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.MealFoodItem",
+        "Name": "FoodAllergen",
+        "Type": "Domain.Models.FoodAllergen",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodAllergenController",
     "Method": "Delete",
-    "RelativePath": "api/MealFoodItems",
+    "RelativePath": "api/FoodAllergen",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -280,9 +280,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodAllergenController",
     "Method": "GetById",
-    "RelativePath": "api/MealFoodItems/{id}",
+    "RelativePath": "api/FoodAllergen/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -296,9 +296,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlansController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoryController",
     "Method": "GetAll",
-    "RelativePath": "api/MealPlans",
+    "RelativePath": "api/FoodCategory",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -306,41 +306,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlansController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoryController",
     "Method": "Add",
-    "RelativePath": "api/MealPlans",
+    "RelativePath": "api/FoodCategory",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.MealPlan",
+        "Name": "FoodCategory",
+        "Type": "Domain.Models.FoodCategory",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlansController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoryController",
     "Method": "Update",
-    "RelativePath": "api/MealPlans",
+    "RelativePath": "api/FoodCategory",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.MealPlan",
+        "Name": "FoodCategory",
+        "Type": "Domain.Models.FoodCategory",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlansController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoryController",
     "Method": "Delete",
-    "RelativePath": "api/MealPlans",
+    "RelativePath": "api/FoodCategory",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -354,9 +354,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlansController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodCategoryController",
     "Method": "GetById",
-    "RelativePath": "api/MealPlans/{id}",
+    "RelativePath": "api/FoodCategory/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -370,9 +370,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemController",
     "Method": "GetAll",
-    "RelativePath": "api/Meals",
+    "RelativePath": "api/FoodItem",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -380,41 +380,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemController",
     "Method": "Add",
-    "RelativePath": "api/Meals",
+    "RelativePath": "api/FoodItem",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Meal",
+        "Name": "FoodItem",
+        "Type": "Domain.Models.FoodItem",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemController",
     "Method": "Update",
-    "RelativePath": "api/Meals",
+    "RelativePath": "api/FoodItem",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Meal",
+        "Name": "FoodItem",
+        "Type": "Domain.Models.FoodItem",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemController",
     "Method": "Delete",
-    "RelativePath": "api/Meals",
+    "RelativePath": "api/FoodItem",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -428,9 +428,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemController",
     "Method": "GetById",
-    "RelativePath": "api/Meals/{id}",
+    "RelativePath": "api/FoodItem/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -444,9 +444,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemCategoryController",
     "Method": "GetAll",
-    "RelativePath": "api/NutritionalGoals",
+    "RelativePath": "api/FoodItemCategory",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -454,41 +454,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemCategoryController",
     "Method": "Add",
-    "RelativePath": "api/NutritionalGoals",
+    "RelativePath": "api/FoodItemCategory",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.NutritionalGoal",
+        "Name": "FoodItemCategory",
+        "Type": "Domain.Models.FoodItemCategory",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemCategoryController",
     "Method": "Update",
-    "RelativePath": "api/NutritionalGoals",
+    "RelativePath": "api/FoodItemCategory",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.NutritionalGoal",
+        "Name": "FoodItemCategory",
+        "Type": "Domain.Models.FoodItemCategory",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemCategoryController",
     "Method": "Delete",
-    "RelativePath": "api/NutritionalGoals",
+    "RelativePath": "api/FoodItemCategory",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -502,9 +502,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.FoodItemCategoryController",
     "Method": "GetById",
-    "RelativePath": "api/NutritionalGoals/{id}",
+    "RelativePath": "api/FoodItemCategory/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -518,9 +518,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfilesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealController",
     "Method": "GetAll",
-    "RelativePath": "api/Profiles",
+    "RelativePath": "api/Meal",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -528,41 +528,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfilesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealController",
     "Method": "Add",
-    "RelativePath": "api/Profiles",
+    "RelativePath": "api/Meal",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Profile",
+        "Name": "Meal",
+        "Type": "Domain.Models.Meal",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfilesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealController",
     "Method": "Update",
-    "RelativePath": "api/Profiles",
+    "RelativePath": "api/Meal",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Profile",
+        "Name": "Meal",
+        "Type": "Domain.Models.Meal",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfilesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealController",
     "Method": "Delete",
-    "RelativePath": "api/Profiles",
+    "RelativePath": "api/Meal",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -576,9 +576,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfilesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealController",
     "Method": "GetById",
-    "RelativePath": "api/Profiles/{id}",
+    "RelativePath": "api/Meal/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -592,9 +592,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemController",
     "Method": "GetAll",
-    "RelativePath": "api/RecipeIngredients",
+    "RelativePath": "api/MealFoodItem",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -602,41 +602,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemController",
     "Method": "Add",
-    "RelativePath": "api/RecipeIngredients",
+    "RelativePath": "api/MealFoodItem",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.RecipeIngredient",
+        "Name": "MealFoodItem",
+        "Type": "Domain.Models.MealFoodItem",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemController",
     "Method": "Update",
-    "RelativePath": "api/RecipeIngredients",
+    "RelativePath": "api/MealFoodItem",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.RecipeIngredient",
+        "Name": "MealFoodItem",
+        "Type": "Domain.Models.MealFoodItem",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemController",
     "Method": "Delete",
-    "RelativePath": "api/RecipeIngredients",
+    "RelativePath": "api/MealFoodItem",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -650,9 +650,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealFoodItemController",
     "Method": "GetById",
-    "RelativePath": "api/RecipeIngredients/{id}",
+    "RelativePath": "api/MealFoodItem/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -666,9 +666,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlanController",
     "Method": "GetAll",
-    "RelativePath": "api/Recipes",
+    "RelativePath": "api/MealPlan",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -676,41 +676,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlanController",
     "Method": "Add",
-    "RelativePath": "api/Recipes",
+    "RelativePath": "api/MealPlan",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Recipe",
+        "Name": "MealPlan",
+        "Type": "Domain.Models.MealPlan",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlanController",
     "Method": "Update",
-    "RelativePath": "api/Recipes",
+    "RelativePath": "api/MealPlan",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Recipe",
+        "Name": "MealPlan",
+        "Type": "Domain.Models.MealPlan",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlanController",
     "Method": "Delete",
-    "RelativePath": "api/Recipes",
+    "RelativePath": "api/MealPlan",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -724,9 +724,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipesController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.MealPlanController",
     "Method": "GetById",
-    "RelativePath": "api/Recipes/{id}",
+    "RelativePath": "api/MealPlan/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -740,9 +740,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalController",
     "Method": "GetAll",
-    "RelativePath": "api/Records",
+    "RelativePath": "api/NutritionalGoal",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -750,41 +750,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalController",
     "Method": "Add",
-    "RelativePath": "api/Records",
+    "RelativePath": "api/NutritionalGoal",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Record",
+        "Name": "NutritionalGoal",
+        "Type": "Domain.Models.NutritionalGoal",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalController",
     "Method": "Update",
-    "RelativePath": "api/Records",
+    "RelativePath": "api/NutritionalGoal",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.Record",
+        "Name": "NutritionalGoal",
+        "Type": "Domain.Models.NutritionalGoal",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalController",
     "Method": "Delete",
-    "RelativePath": "api/Records",
+    "RelativePath": "api/NutritionalGoal",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -798,9 +798,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordsController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.NutritionalGoalController",
     "Method": "GetById",
-    "RelativePath": "api/Records/{id}",
+    "RelativePath": "api/NutritionalGoal/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -814,9 +814,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UsersController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfileController",
     "Method": "GetAll",
-    "RelativePath": "api/Users",
+    "RelativePath": "api/Profile",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -824,41 +824,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UsersController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfileController",
     "Method": "Add",
-    "RelativePath": "api/Users",
+    "RelativePath": "api/Profile",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.User",
+        "Name": "Profile",
+        "Type": "Domain.Models.Profile",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UsersController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfileController",
     "Method": "Update",
-    "RelativePath": "api/Users",
+    "RelativePath": "api/Profile",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Models.User",
+        "Name": "Profile",
+        "Type": "Domain.Models.Profile",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UsersController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfileController",
     "Method": "Delete",
-    "RelativePath": "api/Users",
+    "RelativePath": "api/Profile",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -872,9 +872,601 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UsersController",
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ProfileController",
     "Method": "GetById",
-    "RelativePath": "api/Users/{id}",
+    "RelativePath": "api/Profile/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeController",
+    "Method": "GetAll",
+    "RelativePath": "api/Recipe",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeController",
+    "Method": "Add",
+    "RelativePath": "api/Recipe",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Recipe",
+        "Type": "Domain.Models.Recipe",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeController",
+    "Method": "Update",
+    "RelativePath": "api/Recipe",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Recipe",
+        "Type": "Domain.Models.Recipe",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeController",
+    "Method": "Delete",
+    "RelativePath": "api/Recipe",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeController",
+    "Method": "GetById",
+    "RelativePath": "api/Recipe/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientController",
+    "Method": "GetAll",
+    "RelativePath": "api/RecipeIngredient",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientController",
+    "Method": "Add",
+    "RelativePath": "api/RecipeIngredient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "RecipeIngredient",
+        "Type": "Domain.Models.RecipeIngredient",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientController",
+    "Method": "Update",
+    "RelativePath": "api/RecipeIngredient",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "RecipeIngredient",
+        "Type": "Domain.Models.RecipeIngredient",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientController",
+    "Method": "Delete",
+    "RelativePath": "api/RecipeIngredient",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecipeIngredientController",
+    "Method": "GetById",
+    "RelativePath": "api/RecipeIngredient/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordController",
+    "Method": "GetAll",
+    "RelativePath": "api/Record",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordController",
+    "Method": "Add",
+    "RelativePath": "api/Record",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Record",
+        "Type": "Domain.Models.Record",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordController",
+    "Method": "Update",
+    "RelativePath": "api/Record",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Record",
+        "Type": "Domain.Models.Record",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordController",
+    "Method": "Delete",
+    "RelativePath": "api/Record",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.RecordController",
+    "Method": "GetById",
+    "RelativePath": "api/Record/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListController",
+    "Method": "GetAll",
+    "RelativePath": "api/ShoppingList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListController",
+    "Method": "Add",
+    "RelativePath": "api/ShoppingList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ShoppingList",
+        "Type": "Domain.Models.ShoppingList",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListController",
+    "Method": "Update",
+    "RelativePath": "api/ShoppingList",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ShoppingList",
+        "Type": "Domain.Models.ShoppingList",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListController",
+    "Method": "Delete",
+    "RelativePath": "api/ShoppingList",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListController",
+    "Method": "GetById",
+    "RelativePath": "api/ShoppingList/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListItemController",
+    "Method": "GetAll",
+    "RelativePath": "api/ShoppingListItem",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListItemController",
+    "Method": "Add",
+    "RelativePath": "api/ShoppingListItem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ShoppingListItem",
+        "Type": "Domain.Models.ShoppingListItem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListItemController",
+    "Method": "Update",
+    "RelativePath": "api/ShoppingListItem",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ShoppingListItem",
+        "Type": "Domain.Models.ShoppingListItem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListItemController",
+    "Method": "Delete",
+    "RelativePath": "api/ShoppingListItem",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.ShoppingListItemController",
+    "Method": "GetById",
+    "RelativePath": "api/ShoppingListItem/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.TipController",
+    "Method": "GetAll",
+    "RelativePath": "api/Tip",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.TipController",
+    "Method": "Add",
+    "RelativePath": "api/Tip",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Tip",
+        "Type": "Domain.Models.Tip",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.TipController",
+    "Method": "Update",
+    "RelativePath": "api/Tip",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Tip",
+        "Type": "Domain.Models.Tip",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.TipController",
+    "Method": "Delete",
+    "RelativePath": "api/Tip",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.TipController",
+    "Method": "GetById",
+    "RelativePath": "api/Tip/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserController",
+    "Method": "GetAll",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserController",
+    "Method": "Add",
+    "RelativePath": "api/User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Domain.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "api/User",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Domain.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserController",
+    "Method": "GetById",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserPreferenceController",
+    "Method": "GetAll",
+    "RelativePath": "api/UserPreference",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserPreferenceController",
+    "Method": "Add",
+    "RelativePath": "api/UserPreference",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserPreference",
+        "Type": "Domain.Models.UserPreference",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserPreferenceController",
+    "Method": "Update",
+    "RelativePath": "api/UserPreference",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserPreference",
+        "Type": "Domain.Models.UserPreference",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserPreferenceController",
+    "Method": "Delete",
+    "RelativePath": "api/UserPreference",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u041F\u0438\u0442\u0430\u043D\u0438\u0435.Controllers.UserPreferenceController",
+    "Method": "GetById",
+    "RelativePath": "api/UserPreference/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

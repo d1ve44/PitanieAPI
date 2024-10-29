@@ -29,13 +29,13 @@ namespace BusinessLogic.Services
         public async Task Create(FavoriteRecipe model)
         {
             await _repositoryWrapper.FavoriteRecipe.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
         public async Task Update(FavoriteRecipe model)
         {
-            _repositoryWrapper.FavoriteRecipe.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.FavoriteRecipe.Update(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -43,8 +43,8 @@ namespace BusinessLogic.Services
             var FavoriteRecipe = await _repositoryWrapper.FavoriteRecipe
                 .FindByCondition(x => x.FavoriteRecipeId == id);
 
-            _repositoryWrapper.FavoriteRecipe.Delete(FavoriteRecipe.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.FavoriteRecipe.Delete(FavoriteRecipe.First());
+            await _repositoryWrapper.Save();
         }
     }
 }

@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NutritionalGoalsController : ControllerBase
+    public class NutritionalGoalController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public NutritionalGoalsController(практическая_работаContext context)
+        private INutritionalGoalService _NutritionalGoalService;
+        public NutritionalGoalController(INutritionalGoalService NutritionalGoalService)
         {
-            Context = context;
+            _NutritionalGoalService = NutritionalGoalService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<NutritionalGoal> user = Context.NutritionalGoals.ToList();
-            return Ok(user);
+            return Ok(await _NutritionalGoalService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            NutritionalGoal? user = Context.NutritionalGoals.Where(x => x.GoalId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _NutritionalGoalService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(NutritionalGoal user)
+        public async Task<IActionResult> Add(NutritionalGoal NutritionalGoal)
         {
-            Context.NutritionalGoals.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _NutritionalGoalService.Create(NutritionalGoal);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(NutritionalGoal user)
+        public async Task<IActionResult> Update(NutritionalGoal NutritionalGoal)
         {
-            Context.NutritionalGoals.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _NutritionalGoalService.Update(NutritionalGoal);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            NutritionalGoal? user = Context.NutritionalGoals.Where(x => x.GoalId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.NutritionalGoals.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _NutritionalGoalService.Delete(id);
+            return Ok();
         }
     }
 }

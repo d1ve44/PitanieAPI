@@ -29,13 +29,13 @@ namespace BusinessLogic.Services
         public async Task Create(ShoppingListItem model)
         {
             await _repositoryWrapper.ShoppingListItem.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
         public async Task Update(ShoppingListItem model)
         {
-            _repositoryWrapper.ShoppingListItem.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.ShoppingListItem.Update(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -43,8 +43,8 @@ namespace BusinessLogic.Services
             var ShoppingListItem = await _repositoryWrapper.ShoppingListItem
                 .FindByCondition(x => x.ShoppingListItemId == id);
 
-            _repositoryWrapper.ShoppingListItem.Delete(ShoppingListItem.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.ShoppingListItem.Delete(ShoppingListItem.First());
+            await _repositoryWrapper.Save();
         }
     }
 }

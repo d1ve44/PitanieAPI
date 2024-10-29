@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FoodCategoriesController : ControllerBase
+    public class FoodCategoryController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public FoodCategoriesController(практическая_работаContext context)
+        private IFoodCategoryService _FoodCategoryService;
+        public FoodCategoryController(IFoodCategoryService FoodCategoryService)
         {
-            Context = context;
+            _FoodCategoryService = FoodCategoryService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<FoodCategory> user = Context.FoodCategories.ToList();
-            return Ok(user);
+            return Ok(await _FoodCategoryService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            FoodCategory? user = Context.FoodCategories.Where(x => x.FoodCategoryId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _FoodCategoryService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(FoodCategory user)
+        public async Task<IActionResult> Add(FoodCategory FoodCategory)
         {
-            Context.FoodCategories.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodCategoryService.Create(FoodCategory);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(FoodCategory user)
+        public async Task<IActionResult> Update(FoodCategory FoodCategory)
         {
-            Context.FoodCategories.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodCategoryService.Update(FoodCategory);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            FoodCategory? user = Context.FoodCategories.Where(x => x.FoodCategoryId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.FoodCategories.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodCategoryService.Delete(id);
+            return Ok();
         }
     }
 }

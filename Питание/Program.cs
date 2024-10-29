@@ -1,5 +1,13 @@
+using System.Reflection;
+using BusinessLogic.Services;
+using Domain.Interfaces;
+using Domain.Wrapper;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using Питание.Models;
+using Microsoft.OpenApi.Models;
+using BusinessLogic.Services.BusinessLogic.Services;
+using DateAccess;
+using DateAccess.Wrapper;
 
 namespace Питание
 {
@@ -9,6 +17,32 @@ namespace Питание
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddDbContext<практическая_работаContext>(
+                optionsAction: options => options.UseSqlServer(
+                    connectionString: "Server=DESKTOP-7IAQVED;Database=практическая_работа;User Id=Никита;Password=7315;"));
+
+            builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            builder.Services.AddScoped<IAllergenService, AllergenService>();
+            builder.Services.AddScoped<IFavoriteRecipeService, FavoriteRecipeService>();
+            builder.Services.AddScoped<IFoodAllergenService, FoodAllergenService>();
+            builder.Services.AddScoped<IActivityService, ActivityService>();
+            builder.Services.AddScoped<IFoodCategoryService, FoodCategoryService>();
+            builder.Services.AddScoped<IFoodItemService, FoodItemService>();
+            builder.Services.AddScoped<IFoodItemCategoryService, FoodItemCategoryService>();
+            builder.Services.AddScoped<IMealService, MealService>();
+            builder.Services.AddScoped<IMealFoodItemService, MealFoodItemService>();
+            builder.Services.AddScoped<IMealPlanService, MealPlanService>();
+            builder.Services.AddScoped<INutritionalGoalService, NutritionalGoalService>();
+            builder.Services.AddScoped<IProfileService, ProfileService>();
+            builder.Services.AddScoped<IRecipeService, RecipeService>();
+            builder.Services.AddScoped<IRecipeIngredientService, RecipeIngredientService>();
+            builder.Services.AddScoped<IRecordService, RecordService>();
+            builder.Services.AddScoped<IShoppingListService, ShoppingListService>();
+            builder.Services.AddScoped<IShoppingListItemService, ShoppingListItemService>();
+            builder.Services.AddScoped<ITipService, TipService>();
+            builder.Services.AddScoped<IUserPreferenceService, UserPreferenceService>();
+            builder.Services.AddScoped<IUserService, UserService>();
+
             builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()
@@ -16,6 +50,7 @@ namespace Питание
                        .AllowAnyHeader();
                 
             }));
+
 
 
             builder.Services.AddDbContext<практическая_работаContext>(
@@ -46,6 +81,8 @@ namespace Питание
             app.MapControllers();
 
             app.Run();
+
+
         }
     }
 }

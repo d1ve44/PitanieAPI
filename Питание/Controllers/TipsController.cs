@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TipsController : ControllerBase
+    public class TipController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public TipsController(практическая_работаContext context)
+        private ITipService _TipService;
+        public TipController(ITipService TipService)
         {
-            Context = context;
+            _TipService = TipService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Tip> user = Context.Tips.ToList();
-            return Ok(user);
+            return Ok(await _TipService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Tip? user = Context.Tips.Where(x => x.TipId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _TipService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(Tip user)
+        public async Task<IActionResult> Add(Tip Tip)
         {
-            Context.Tips.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _TipService.Create(Tip);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(Tip user)
+        public async Task<IActionResult> Update(Tip Tip)
         {
-            Context.Tips.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _TipService.Update(Tip);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Tip? user = Context.Tips.Where(x => x.TipId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.Tips.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _TipService.Delete(id);
+            return Ok();
         }
     }
 }

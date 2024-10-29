@@ -29,13 +29,13 @@ namespace BusinessLogic.Services
         public async Task Create(MealPlan model)
         {
             await _repositoryWrapper.MealPlan.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
         public async Task Update(MealPlan model)
         {
-            _repositoryWrapper.MealPlan.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.MealPlan.Update(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -43,8 +43,8 @@ namespace BusinessLogic.Services
             var MealPlan = await _repositoryWrapper.MealPlan
                 .FindByCondition(x => x.MealPlanId == id);
 
-            _repositoryWrapper.MealPlan.Delete(MealPlan.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.MealPlan.Delete(MealPlan.First());
+            await _repositoryWrapper.Save();
         }
     }
 }

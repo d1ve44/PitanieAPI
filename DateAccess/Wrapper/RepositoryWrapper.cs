@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DateAccess.Models;
+using Domain.Wrapper;
 
-namespace Domain.Wrapper
+namespace DateAccess.Wrapper
 {
     public class RepositoryWrapper : IRepositoryWrapper
     {

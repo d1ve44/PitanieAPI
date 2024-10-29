@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProfilesController : ControllerBase
+    public class ProfileController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public ProfilesController(практическая_работаContext context)
+        private IProfileService _ProfileService;
+        public ProfileController(IProfileService ProfileService)
         {
-            Context = context;
+            _ProfileService = ProfileService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Profile> user = Context.Profiles.ToList();
-            return Ok(user);
+            return Ok(await _ProfileService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Profile? user = Context.Profiles.Where(x => x.ProfileId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _ProfileService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(Profile user)
+        public async Task<IActionResult> Add(Profile Profile)
         {
-            Context.Profiles.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _ProfileService.Create(Profile);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(Profile user)
+        public async Task<IActionResult> Update(Profile Profile)
         {
-            Context.Profiles.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _ProfileService.Update(Profile);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Profile? user = Context.Profiles.Where(x => x.ProfileId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.Profiles.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _ProfileService.Delete(id);
+            return Ok();
         }
     }
 }

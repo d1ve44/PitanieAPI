@@ -29,13 +29,13 @@ namespace BusinessLogic.Services
         public async Task Create(Profile model)
         {
             await _repositoryWrapper.Profile.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
         public async Task Update(Profile model)
         {
-            _repositoryWrapper.Profile.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Profile.Update(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -43,8 +43,8 @@ namespace BusinessLogic.Services
             var Profile = await _repositoryWrapper.Profile
                 .FindByCondition(x => x.ProfileId == id);
 
-            _repositoryWrapper.Profile.Delete(Profile.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Profile.Delete(Profile.First());
+            await _repositoryWrapper.Save();
         }
     }
 }

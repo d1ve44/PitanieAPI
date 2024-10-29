@@ -29,13 +29,13 @@ namespace BusinessLogic.Services
         public async Task Create(UserPreference model)
         {
             await _repositoryWrapper.UserPreference.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
         public async Task Update(UserPreference model)
         {
-            _repositoryWrapper.UserPreference.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.UserPreference.Update(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -43,8 +43,8 @@ namespace BusinessLogic.Services
             var UserPreference = await _repositoryWrapper.UserPreference
                 .FindByCondition(x => x.UserPreferenceId == id);
 
-            _repositoryWrapper.UserPreference.Delete(UserPreference.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.UserPreference.Delete(UserPreference.First());
+            await _repositoryWrapper.Save();
         }
     }
 }

@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RecipesController : ControllerBase
+    public class RecipeController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public RecipesController(практическая_работаContext context)
+        private IRecipeService _RecipeService;
+        public RecipeController(IRecipeService RecipeService)
         {
-            Context = context;
+            _RecipeService = RecipeService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Recipe> user = Context.Recipes.ToList();
-            return Ok(user);
+            return Ok(await _RecipeService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Recipe? user = Context.Recipes.Where(x => x.RecipeId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _RecipeService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(Recipe user)
+        public async Task<IActionResult> Add(Recipe Recipe)
         {
-            Context.Recipes.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _RecipeService.Create(Recipe);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(Recipe user)
+        public async Task<IActionResult> Update(Recipe Recipe)
         {
-            Context.Recipes.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _RecipeService.Update(Recipe);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Recipe? user = Context.Recipes.Where(x => x.RecipeId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.Recipes.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _RecipeService.Delete(id);
+            return Ok();
         }
     }
 }

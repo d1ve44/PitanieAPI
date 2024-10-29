@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FoodItemsController : ControllerBase
+    public class FoodItemController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public FoodItemsController(практическая_работаContext context)
+        private IFoodItemService _FoodItemService;
+        public FoodItemController(IFoodItemService FoodItemService)
         {
-            Context = context;
+            _FoodItemService = FoodItemService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<FoodItem> user = Context.FoodItems.ToList();
-            return Ok(user);
+            return Ok(await _FoodItemService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            FoodItem? user = Context.FoodItems.Where(x => x.FoodItemId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _FoodItemService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(FoodItem user)
+        public async Task<IActionResult> Add(FoodItem FoodItem)
         {
-            Context.FoodItems.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodItemService.Create(FoodItem);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(FoodItem user)
+        public async Task<IActionResult> Update(FoodItem FoodItem)
         {
-            Context.FoodItems.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodItemService.Update(FoodItem);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            FoodItem? user = Context.FoodItems.Where(x => x.FoodItemId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.FoodItems.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodItemService.Delete(id);
+            return Ok();
         }
     }
 }

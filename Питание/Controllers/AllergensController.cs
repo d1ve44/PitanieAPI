@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AllergensController : ControllerBase
+    public class AllergenController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public AllergensController(практическая_работаContext context)
+        private IAllergenService _allergenService;
+        public AllergenController(IAllergenService allergenService)
         {
-            Context = context;
+            _allergenService = allergenService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Allergen> user = Context.Allergens.ToList();
-            return Ok(user);
+            return Ok(await _allergenService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Allergen? user = Context.Allergens.Where(x => x.AllergenId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _allergenService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(Allergen user)
+        public async Task<IActionResult> Add(Allergen allergen)
         {
-            Context.Allergens.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _allergenService.Create(allergen);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(Allergen user)
+        public async Task<IActionResult> Update(Allergen allergen)
         {
-            Context.Allergens.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _allergenService.Update(allergen);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Allergen? user = Context.Allergens.Where(x => x.AllergenId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.Allergens.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _allergenService.Delete(id);
+            return Ok();
         }
     }
 }

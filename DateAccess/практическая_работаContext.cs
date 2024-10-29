@@ -4,7 +4,7 @@ using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace DateAccess.Models
+namespace DateAccess
 {
     public partial class практическая_работаContext : DbContext
     {

@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FoodAllergensController : ControllerBase
+    public class FoodAllergenController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public FoodAllergensController(практическая_работаContext context)
+        private IFoodAllergenService _FoodAllergenService;
+        public FoodAllergenController(IFoodAllergenService FoodAllergenService)
         {
-            Context = context;
+            _FoodAllergenService = FoodAllergenService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<FoodAllergen> user = Context.FoodAllergens.ToList();
-            return Ok(user);
+            return Ok(await _FoodAllergenService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            FoodAllergen? user = Context.FoodAllergens.Where(x => x.FoodAllergenId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _FoodAllergenService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(FoodAllergen user)
+        public async Task<IActionResult> Add(FoodAllergen FoodAllergen)
         {
-            Context.FoodAllergens.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodAllergenService.Create(FoodAllergen);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(FoodAllergen user)
+        public async Task<IActionResult> Update(FoodAllergen FoodAllergen)
         {
-            Context.FoodAllergens.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodAllergenService.Update(FoodAllergen);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            FoodAllergen? user = Context.FoodAllergens.Where(x => x.FoodAllergenId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.FoodAllergens.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _FoodAllergenService.Delete(id);
+            return Ok();
         }
     }
 }

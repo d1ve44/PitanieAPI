@@ -1,66 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Питание.Models;
+using Domain.Models;
+using Domain.Interfaces;
 
 namespace Питание.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MealsController : ControllerBase
+    public class MealController : ControllerBase
     {
-        public практическая_работаContext Context { get; }
-
-        public MealsController(практическая_работаContext context)
+        private IMealService _MealService;
+        public MealController(IMealService MealService)
         {
-            Context = context;
+            _MealService = MealService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Meal> user = Context.Meals.ToList();
-            return Ok(user);
+            return Ok(await _MealService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Meal? user = Context.Meals.Where(x => x.MealId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найден");
-            }
-            return Ok(user);
+            return Ok(await _MealService.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Add(Meal user)
+        public async Task<IActionResult> Add(Meal Meal)
         {
-            Context.Meals.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _MealService.Create(Meal);
+            return Ok();
         }
 
-
         [HttpPut]
-        public IActionResult Update(Meal user)
+        public async Task<IActionResult> Update(Meal Meal)
         {
-            Context.Meals.Update(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _MealService.Update(Meal);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Meal? user = Context.Meals.Where(x => x.MealId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return BadRequest("Не найдено");
-            }
-            Context.Meals.Remove(user);
-            Context.SaveChanges();
-            return Ok(user);
+            await _MealService.Delete(id);
+            return Ok();
         }
     }
 }
